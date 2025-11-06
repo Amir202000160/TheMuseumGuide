@@ -8,6 +8,7 @@ public class MouseBehaviour : MonoBehaviour
      [SerializeField] GameObject[] Status;
     [SerializeField] float mouseSenstivity ;
     InputAction LookAction;
+    InputAction LeftMouseAction;
     [SerializeField] LayerMask Enemylayer;
     [SerializeField] Camera fpscam;
     Ray ray;
@@ -20,6 +21,7 @@ public class MouseBehaviour : MonoBehaviour
     outline = GetComponent<Outline>();
     outline.enabled = false;
      LookAction = InputSystem.actions.FindAction("Mouse");
+     LeftMouseAction = InputSystem.actions.FindAction("Attack");
         UnityEngine.Cursor.visible =false;
         UnityEngine.Cursor.lockState = CursorLockMode.Confined;
     }
@@ -59,8 +61,12 @@ public class MouseBehaviour : MonoBehaviour
            
             hitInfo.collider.gameObject.GetComponent<Outline>().enabled = true;
             Debug.Log("Hit "+ hitInfo.collider.name);
+            if(LeftMouseAction.IsPressed())
+            {
+                Debug.Log("Shoot "+ hitInfo.collider.name);
+                 hitInfo.collider.gameObject.GetComponent<AudioSource>().Play();
+            }
         }
-       
        else 
         {
             foreach(GameObject status in Status)
@@ -68,9 +74,7 @@ public class MouseBehaviour : MonoBehaviour
                 status.GetComponent<Outline>().enabled = false;
             }
         }
-           
-        
-        
+
     }
     
 }
