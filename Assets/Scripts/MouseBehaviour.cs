@@ -56,7 +56,7 @@ public class MouseBehaviour : MonoBehaviour
     {
         ray = new Ray(fpscam.transform.position, fpscam.transform.forward);
         
-        if(Physics.Raycast(ray, out RaycastHit hitInfo, 100f, Enemylayer))
+        if(Physics.Raycast(ray, out RaycastHit hitInfo, 10000f, Enemylayer))
         {
            
             hitInfo.collider.gameObject.GetComponent<Outline>().enabled = true;
@@ -75,6 +75,10 @@ public class MouseBehaviour : MonoBehaviour
             }
         }
 
+    }
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.green;
+        Gizmos.DrawRay(ray.origin,ray.direction* 10000f);
     }
     
 }
