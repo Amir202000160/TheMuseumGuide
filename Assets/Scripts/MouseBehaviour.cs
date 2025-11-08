@@ -9,7 +9,7 @@ public class MouseBehaviour : MonoBehaviour
     [SerializeField] float mouseSenstivity ;
     InputAction LookAction;
     InputAction LeftMouseAction;
-    [SerializeField] LayerMask Enemylayer;
+    [SerializeField] LayerMask Statuslayer;
     [SerializeField] Camera fpscam;
     Ray ray;
     [HideInInspector]
@@ -41,22 +41,12 @@ public class MouseBehaviour : MonoBehaviour
         
     }
 
-    /*void OnMouseOver()
-    {
-        outline.enabled = true;
-        Debug.Log("Mouse Entered");
-    }
-    void OnMouseExit()
-    {
-        outline.enabled = false;
-        Debug.Log("Mouse Exited");
-    }*/
 
     void CamRay()
     {
         ray = new Ray(fpscam.transform.position, fpscam.transform.forward);
         
-        if(Physics.Raycast(ray, out RaycastHit hitInfo, 10000f, Enemylayer))
+        if(Physics.Raycast(ray, out RaycastHit hitInfo, 10000f, Statuslayer))
         {
            
             hitInfo.collider.gameObject.GetComponent<Outline>().enabled = true;
@@ -65,6 +55,7 @@ public class MouseBehaviour : MonoBehaviour
             {
                 Debug.Log("Shoot "+ hitInfo.collider.name);
                  hitInfo.collider.gameObject.GetComponent<AudioSource>().Play();
+            
             }
         }
        else 
