@@ -764,12 +764,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseBehaviour
   Player: {fileID: 121845653}
+  UI: {fileID: 1815792955}
   Status:
   - {fileID: 1648912598}
   mouseSenstivity: 7
   Statuslayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   fpscam: {fileID: 330585545}
   angle: 0
 --- !u!114 &330585549
@@ -1115,7 +1116,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924451790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1123,7 +1124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0951, y: -0.2617}
+  m_AnchoredPosition: {x: 0.0951, y: -0.44}
   m_SizeDelta: {x: -0.4965, y: -0.7525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &924451792
@@ -1147,8 +1148,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Egyptian Museum in Cairo
-
-
 
     The group statue displayed in the Egyptian
     Museum in Cairo represents King Ramesses III, positioned centrally between the
@@ -1186,8 +1185,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.3
-  m_fontSizeBase: 0.3
+  m_fontSize: 0.311
+  m_fontSizeBase: 0.311
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1224,7 +1223,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.10437012, y: 0.1797924, z: -0.07177973, w: 0.07517731}
+  m_margin: {x: 0.10437012, y: 0.1797924, z: -0.07177973, w: 0.32308376}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

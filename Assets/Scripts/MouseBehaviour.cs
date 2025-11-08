@@ -5,6 +5,7 @@ public class MouseBehaviour : MonoBehaviour
 {
      private  Outline outline;
      [SerializeField] GameObject Player;
+     [SerializeField] GameObject UI;
      [SerializeField] GameObject[] Status;
     [SerializeField] float mouseSenstivity ;
     InputAction LookAction;
@@ -20,6 +21,7 @@ public class MouseBehaviour : MonoBehaviour
     {
     outline = GetComponent<Outline>();
     outline.enabled = false;
+    UI.SetActive(false) ;
      LookAction = InputSystem.actions.FindAction("Mouse");
      LeftMouseAction = InputSystem.actions.FindAction("Attack");
         UnityEngine.Cursor.visible =false;
@@ -55,8 +57,12 @@ public class MouseBehaviour : MonoBehaviour
             {
                 Debug.Log("Shoot "+ hitInfo.collider.name);
                  hitInfo.collider.gameObject.GetComponent<AudioSource>().Play();
-            
+                  UI.SetActive(true);
             }
+            if(!hitInfo.collider.gameObject.GetComponent<AudioSource>().isPlaying)
+                  {
+                    UI.SetActive(false);
+                  }
         }
        else 
         {
