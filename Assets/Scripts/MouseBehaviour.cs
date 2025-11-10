@@ -57,6 +57,7 @@ public class MouseBehaviour : MonoBehaviour
             {
                 Debug.Log("Shoot "+ hitInfo.collider.name);
                  hitInfo.collider.gameObject.GetComponent<AudioSource>().Play();
+            
                   UI.SetActive(true);
             }
             if(!hitInfo.collider.gameObject.GetComponent<AudioSource>().isPlaying)
