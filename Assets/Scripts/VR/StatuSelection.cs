@@ -20,6 +20,6 @@ public class StatuSelection : MonoBehaviour
     public void SelectStatu()
     {
         statuUi.SetActive(true);
-        statuAudioSource.Play();
+        
     }
 }
